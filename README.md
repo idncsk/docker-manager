@@ -1,7 +1,7 @@
 
 <div align="center">
   <h1>DockerTray Manager</h1>
-<img src="https://im2.ezgif.com/tmp/ezgif-2-092e58a95e.gif" width="500px" />
+<img src="./src/assets/readme.gif" width="500px" />
 </div>
 This is a simples application built with electron as a study project. Here are the requirements to run this application:
 - Have docker installed
