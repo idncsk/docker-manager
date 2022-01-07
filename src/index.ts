@@ -2,12 +2,20 @@ import { app, Tray } from "electron";
 
 import { createTrayMenu } from "./tray/createMenu";
 import { createTray } from "./tray/createTray";
-import { listener } from "./tray/listener";
+//import { listener } from "./tray/listener";
+
+import reloader from "electron-reloader";
+/*
+reloader(module, {
+  debug: false,
+  watchRenderer: true,
+});*/
 
 let tray: Tray;
 
 app.on("ready", async () => {
   tray = createTray();
-  listener(tray);
   await createTrayMenu(tray);
 });
+
+//listener();
