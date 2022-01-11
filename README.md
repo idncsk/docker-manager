@@ -50,20 +50,3 @@ npm run build
 So that's all folks, thanks for comming 🤖.
 </p>
 
-# Executing in background 
-- Run build script (This script only run in linux).
-```bash
-yarn build
-```
-- Now you can just copy to your home
-```
-cp -R docker-manager-linux-x64 ~/docker-manager
-```
-- And create symbolic link to /bin
-```
-sudo ls -s ~/docker-manager/docker-manager /bin/docker-manager
-```
-
-
-
-
