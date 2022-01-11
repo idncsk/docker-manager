@@ -1,0 +1,2 @@
+$ /home/bm/Documents/projects/docker-tray/node_modules/.bin/electron .
+[819444:0111/001029.256046:ERROR:sandbox_linux.cc(377)] InitializeSandbox() called with multiple threads in process gpu-process.

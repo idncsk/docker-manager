@@ -1,4 +1,4 @@
-import { MenuItemConstructorOptions, nativeImage } from "electron";
+import { ipcMain, MenuItemConstructorOptions, nativeImage } from "electron";
 import path from "path";
 
 export function getLogo() {
@@ -22,6 +22,10 @@ export function getFooter() {
   const options: MenuItemConstructorOptions[] = [
     {
       type: "separator",
+    },
+    {
+      label: "Update Status",
+      click: () => ipcMain.emit("uptdateMenu"),
     },
     {
       label: "Quit from Docker Manager",
