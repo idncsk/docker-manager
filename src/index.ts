@@ -3,12 +3,10 @@ import { app, Tray } from "electron";
 import { createTrayMenu } from "./tray/createMenu";
 import { createTray } from "./tray/createTray";
 
-import reloader from "electron-reloader";
-
-reloader(module, {
-  debug: false,
-  watchRenderer: true,
-});
+try {
+  const reloader = import("electron-reloader")
+  reloader.then(item => item.default(module))
+} catch (_) {}
 
 let tray: Tray;
 
