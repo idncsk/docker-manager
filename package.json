@@ -1,5 +1,17 @@
 {
+  "name": "docker-tray",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "compile": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
+    "dev:ts": "babel src --extensions \".js,.ts\"  --watch --out-dir dist --copy-files",
+    "dev": "",
+    "start": "npx electron .",
+    "build": "yarn compile && electron-packager . docker-manager --platform=linux --arch=x64"
+  },
   "devDependencies": {
+    "electron": "^17.0.0-alpha.6",
     "@babel/cli": "^7.16.7",
     "@babel/core": "^7.16.7",
     "@babel/node": "^7.16.7",
@@ -8,19 +20,5 @@
     "electron-packager": "^15.4.0",
     "electron-reloader": "^1.2.1",
     "typescript": "^4.5.4"
-  },
-  "name": "docker-tray",
-  "version": "1.0.0",
-  "main": "dist/index.js",
-  "license": "MIT",
-  "scripts": {
-    "compile": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
-    "dev:ts": "babel src --extensions \".js,.ts\"  --watch --out-dir dist --copy-files",
-    "dev": "yarn start && yarn dev:ts",
-    "start": "nohup yarn electron . &",
-    "build": "yarn compile && electron-packager . docker-manager --platform=linux --arch=x64"
-  },
-  "dependencies": {
-    "electron": "^17.0.0-alpha.6"
   }
 }
