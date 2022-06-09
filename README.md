@@ -3,11 +3,14 @@
   <h1>DockerTray Manager</h1>
 <img src="./src/assets/readme.gif" width="500px" />
 </div>
-This is a simples application built with electron as a study project. Here are the requirements to run this application:
+This is a simple application built with electron as a study project. Here are the requirements to run this application:
+<br/>
 - Have docker installed
+<br/>
 - User need to have the rights to run docker commands without sudo
 
-To use docker commands without sudo, you can add your user to docker group, just following this [example](https://docs.docker.com/engine/install/linux-postinstall/). or you can also try running everything with sudo.
+To use docker commands without sudo, you can add your user to docker group, just following this [example](https://docs.docker.com/engine/install/linux-postinstall/).
+
 ## 📍 Important Note
 This is my first electron application, so i did a lot of tests and decided to make babel configurantion by my self. So to run the script ```npm run dev```
 you also need to run ```npm run start```, the first one run typescript compile, and the second run electron application. I know it's boring to run 2 scripts every time, so i'll fix that in soon.
