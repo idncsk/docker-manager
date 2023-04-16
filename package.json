@@ -1,26 +1,21 @@
 {
-  "devDependencies": {
-    "@babel/cli": "^7.16.7",
-    "@babel/core": "^7.16.7",
-    "@babel/node": "^7.16.7",
-    "@babel/preset-env": "^7.16.7",
-    "@babel/preset-typescript": "^7.16.7",
-    "electron-packager": "^15.4.0",
-    "electron-reloader": "^1.2.1",
-    "typescript": "^4.5.4"
-  },
   "name": "docker-tray",
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "compile": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
-    "dev:ts": "babel src --extensions \".js,.ts\"  --watch --out-dir dist --copy-files",
-    "dev": "yarn start && yarn dev:ts",
-    "start": "nohup yarn electron . &",
-    "build": "yarn compile && electron-packager . docker-manager --platform=linux --arch=x64"
+    "dev": "npx tsup ./src --watch --onSuccess \"npx electron dist\" ",
+    "start": "npx electron dist",
+    "compile": "npx tsup src",
+    "build": "npm run compile && electron-packager . docker-manager --platform=linux --arch=x64"
   },
   "dependencies": {
-    "electron": "^17.0.0-alpha.6"
+    "electron": "^23.1.1",
+    "electron-context-menu": "^3.6.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^17.1.1",
+    "tsup": "^6.6.3",
+    "typescript": "^4.5.4"
   }
 }
